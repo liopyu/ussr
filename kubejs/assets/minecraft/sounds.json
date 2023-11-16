@@ -1,0 +1,45 @@
+{
+  
+  "dragonfire_breath": {
+    
+    "sounds": [
+      {
+        "name": "dragonfire_breath"
+      }
+    ]
+  },
+  "lightning_breath": {
+    
+    "sounds": [
+      {
+        "name": "lightning_breath"
+      }
+    ]
+  },
+  "waterdragon_breath": {
+    
+    "sounds": [
+      {
+        "name": "waterdragon_breath"
+      }
+    ]
+  },
+  "ambient.flap": {
+    
+    "sounds": [
+      {
+        "name": "ambient/flap"
+      },
+      {
+        "name": "ambient/flap2"
+      },
+      {
+        "name": "ambient/flap3"
+      },
+      {
+        "name": "ambient/flap4"
+      }
+    ]
+  }
+  
+}
