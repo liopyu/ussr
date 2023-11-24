@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
       'ABA',
       'ACA'
     ], {
-      A: 'minecraft:glass',
+      A: 'minecraft:stone',
       B: 'minecraft:ender_eye',
       C: 'minecraft:ghast_tear'
     });
