@@ -14,10 +14,10 @@ Welcome to the **Useful Starter Script Repository**! This repository provides a 
    - Customize crafting recipes to shape the gameplay experience. Craft string from wool, create paper from birch logs, and concoct an end crystal using stone, ender eyes, and ghast tears.
 
 ### 4. Player Events:
-   - Implement various events for player actions, such as executing commands upon a player's first login and setting attributes like mining speed upon subsequent logins.
+   - Implement various events for player actions, such as executing commands upon a player's first login and setting join/leave messages in color.
 
 ### 5. Mob Effects:
-   - Introduce new mob effects, like *Faeles Power*, modifying the player's attack damage attribute and displaying in a vibrant green color.
+   - Introduce new mob effects, like *Faeles Power*, modifying the player's attack damage attribute and displaying in a vibrant green color as well as Radiation which is a harming effect with a custom death message.
 
 ### 6. Sound Events:
    - Register custom sound events, such as *minecraft:dragonfire_breath*, enhancing the auditory experience in the game.
