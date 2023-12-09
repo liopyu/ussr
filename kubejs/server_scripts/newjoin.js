@@ -1,14 +1,18 @@
 PlayerEvents.loggedIn(event => {
+  //Checks if the player already has the 'new_join' stage and if not it adds it, effectively only running
+  //this once on first world join.
   if (!event.player.stages.has('new_join')) {
-    event.player.stages.add('new_join');
-    //this is a one time command that only runs once when a new player joins
-
-    event.server.runCommandSilent('give @p diamond');
-    event.server.runCommandSilent('give @p emerald');
+    event.player.stages.add('new_join')
+    event.server.runCommandSilent(`give ${event.entity.username} nether_star`)
+    event.server.runCommandSilent(`give ${event.entity.username} emerald`)
+    //Equips player in full leather
+    event.entity.setItemSlot(5, 'minecraft:leather_helmet')
+    event.entity.setItemSlot(4, 'minecraft:leather_chestplate')
+    event.entity.setItemSlot(3, 'minecraft:leather_leggings')
+    event.entity.setItemSlot(2, 'minecraft:leather_boots')
   }
-
-  //this is a command that will run every time a player joins
-  event.server.runCommandSilent(`execute as ${e.entity.username} run give @s gold_ingot`);
+  //This runs every time a player joins
+  event.server.runCommandSilent(`execute as ${event.entity.username} run give @s diamond`)
 });
 
 
