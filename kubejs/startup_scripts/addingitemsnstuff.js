@@ -89,9 +89,10 @@ StartupEvents.registry('item', event => {
 			.alwaysEdible()//Like golden apples
 			//.fastToEat()//Like dried kelp
 			.meat()//Dogs are willing to eat it
-		//.eaten(ctx => {//runs code upon consumption
-		ctx.player.tell(Text.gold('Now THATS Ancient Tempura!'))
-		//If you want to modify this code then you need to restart the game.
+			.eaten(ctx => {//runs code upon consumption
+				ctx.player.tell(Text.gold('Now THATS Ancient Tempura!'))
+				//If you want to modify this code then you need to restart the game.
+			})
 	})
 
 })
