@@ -98,7 +98,7 @@ StartupEvents.registry('item', event => {
 })
 //More complex way of adding a potion effect
 //You will need the client event to set your custom death message as well which should be included in this pack!
-const $EntityDamageSource = Java.loadClass(`net.minecraft.world.damagesource.EntityDamageSource`);
+const $DamageSource = Java.loadClass(`net.minecraft.world.damagesource.DamageSource`)
 
 /** Register effects */
 StartupEvents.registry('mob_effect', event => {
@@ -123,9 +123,9 @@ StartupEvents.registry('mob_effect', event => {
  */
 global.radiationEffect = (entity, lvl) => {
 	// Create damage source
-	const damageSource = new $EntityDamageSource("radiation", entity);
+	let damagesource = new $DamageSource('radiation')
 	// Check if the global is run on the client. If so, return
 	if (entity.level.clientSide) return;
 	// Damage based on level 
-	entity.attack(damageSource, lvl + 1);
+	entity.attack(damagesource, lvl + 1);
 }
