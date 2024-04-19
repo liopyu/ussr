@@ -5,11 +5,12 @@
  * You can use the player's age. This works for most cases, but keep in mind the player's age resets on relogging
  */
 PlayerEvents.tick(event => {
-    if (event.player.age % 20 != 0) return
+    const { server, player, player: { username } } = event
+    if (player.age % 20 != 0) return
     /* Code below here runs once every 20 ticks (20 ticks = 1 second) */
-    event.player.tell('I get 1 gold ingot and 1 diamond every 20 ticks.. Im rich!')
-    event.server.runCommandSilent(`execute as ${event.player.username} run give @s diamond`)
-    event.server.runCommandSilent(`execute as ${event.player.username} run give @s gold_ingot`)
+    player.tell('I get 1 gold ingot and 1 diamond every 20 ticks.. Im rich!')
+    server.runCommandSilent(`execute as ${username} run give @s diamond`)
+    server.runCommandSilent(`execute as ${username} run give @s gold_ingot`)
 })
 
 //In this player tick event we're giving the player regeneration periodically while they're wearing a diamond chestplate
@@ -23,7 +24,7 @@ PlayerEvents.tick(event => {
     const diamondChestplateId = 'minecraft:diamond_chestplate' // Replace with the correct identifier
     if (player.chestArmorItem.id === diamondChestplateId) {
         // Apply regeneration potion effect
-        let potion = event.player.potionEffects
+        let potion = player.potionEffects
         potion.add('minecraft:regeneration', 200, 0, false, false)
     }
 })
